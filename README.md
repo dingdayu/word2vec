@@ -2,44 +2,45 @@
 基于 gensim 的 wiki 词向量
 
 
-### 下载基于文本
+### 步骤
+#### 下载基于文本
 
 ```
 curl -o data/zhwiki/zhwiki-latest-pages-articles.xml.bz2 https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
 ```
 
-### WikiCorpus获取原始文本数据
+#### WikiCorpus获取原始文本数据
 
 ```
 python 01.xml2string.py
 ```
 
-### 使用OpenCC将繁体字转换为简体字
+#### 使用OpenCC将繁体字转换为简体字
 
 ```
 $ cd /data/zhwiki/
 $ opencc -i zhwiki_raw.txt -o zhwiki_t2s.txt -c t2s.json
 ```
 
-### 文本数据分词
+#### 文本数据分词
 
 ```
 python 02.word_segment.py
 ```
 
-### gensim word2vec训练
+#### gensim word2vec训练
 
 ```
 python 03.word2vec.py
 ```
 
-### 加载模型预览效果
+#### 加载模型预览效果
 
 ```
 python 04.word_similarity.py
 ```
 
-### 附：tensorboard 可视化
+#### 附：tensorboard 可视化
 
 生成可视化
 
